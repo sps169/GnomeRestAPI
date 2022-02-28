@@ -1,0 +1,21 @@
+package com.example.firststepsspring.model;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+import javax.persistence.*;
+
+@Entity
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
+public class Sweet {
+    @Id
+    private String id;
+    @Enumerated(EnumType.STRING)
+    private Color color;
+    @ManyToOne
+    private Gnome gnome;
+}
